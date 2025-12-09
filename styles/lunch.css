@@ -1,0 +1,581 @@
+/* Блок с блюдами - Grid */
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Блок каждого блюда - Flex */
+.dish-card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 35px;
+    cursor: pointer;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    background-color: white;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.dish-card:hover {
+    border: 2px solid tomato;
+    transform: translateY(-5px);
+}
+
+.dish-card:hover .dish-button {
+    background-color: tomato;
+    color: white;
+}
+
+.dish-card.selected {
+    border: 2px solid #4CAF50;
+    background-color: #f8fff8;
+}
+
+.dish-card.selected .dish-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Изображение */
+.dish-image {
+    width: 100%;
+    border-radius: 35px;
+    margin-bottom: 15px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Цена */
+.price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+/* Название блюда */
+.dish-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* Вес/объем */
+.weight {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+/* Кнопка */
+.dish-button {
+    background-color: #f1eee9;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: auto;
+    border: none;
+    font-size: 1rem;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.dish-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Кнопка удаления */
+.remove-button {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: auto;
+    border: none;
+    font-size: 1rem;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.remove-button:hover {
+    background-color: #ff5252;
+    transform: translateY(-2px);
+}
+
+/* Навигация - Flexbox */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Активная ссылка */
+#active {
+    color: tomato;
+    font-weight: bold;
+}
+
+/* Стили для фильтров */
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 20px;
+    background: white;
+    color: #333;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    border-color: tomato;
+    color: tomato;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: tomato;
+    border-color: tomato;
+    color: white;
+}
+
+/* Стили для блока вариантов ланча */
+.lunch-variants {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 20px;
+}
+
+.lunch-variants h2 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    border-bottom: 2px solid tomato;
+    padding-bottom: 10px;
+}
+
+.variants-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.variant-card {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 15px;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.variant-card:hover {
+    border-color: tomato;
+    transform: translateY(-5px);
+}
+
+.variant-dishes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.variant-dish {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.variant-dish img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.variant-dish:hover img {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.variant-dish span {
+    font-size: 0.8rem;
+    color: #333;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Стили для варианта с десертом */
+.dessert-variant {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 15px;
+}
+
+.dessert-info {
+    font-size: 0.75rem;
+    color: #666;
+    text-align: center;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Стили для уведомлений */
+.notification-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.notification {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.3));
+}
+
+.notification-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.notification-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.notification-message {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.notification-btn {
+    background: tomato;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Roboto', sans-serif;
+}
+
+.notification-btn:hover {
+    background: #ff4422;
+    transform: translateY(-2px);
+}
+
+/* Стили для индикатора загрузки */
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-style: italic;
+    grid-column: 1 / -1;
+}
+
+.loading::after {
+    content: '...';
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0%, 33% { content: '.'; }
+    34%, 66% { content: '..'; }
+    67%, 100% { content: '...'; }
+}
+
+/* Сообщение когда нет блюд */
+.no-dishes {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    grid-column: 1 / -1;
+    padding: 40px;
+}
+
+/* Стили для сообщения об ошибке */
+.error-message {
+    text-align: center;
+    padding: 40px;
+    color: #d32f2f;
+    font-style: italic;
+    grid-column: 1 / -1;
+    background: #ffebee;
+    border-radius: 10px;
+    border: 1px solid #ffcdd2;
+}
+
+/* Стили для панели заказа */
+.order-panel {
+    position: sticky;
+    bottom: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    margin: 20px auto;
+    max-width: 1200px;
+    z-index: 100;
+    border: 2px solid tomato;
+    transition: all 0.3s ease;
+}
+
+.order-panel-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.order-info {
+    font-size: 1.2rem;
+    color: #2c3e50;
+}
+
+.order-total {
+    font-weight: bold;
+    color: tomato;
+    margin-left: 10px;
+    font-size: 1.3rem;
+}
+
+.order-link {
+    background: tomato;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.order-link:hover {
+    background: #ff4422;
+    transform: translateY(-2px);
+}
+
+.order-link:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.order-link:disabled:hover {
+    background: #ccc;
+    transform: none;
+}
+
+/* Стили для выбранных блюд в заказе */
+.selected-dishes-container {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.selected-dishes {
+    margin-bottom: 15px;
+}
+
+.selected-category {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.selected-category:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.selected-category strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+.selected-category p {
+    margin: 0;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.no-selection {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin: 0;
+}
+
+.total-price {
+    padding-top: 15px;
+    border-top: 2px solid #e0e0e0;
+}
+
+.total-price-value {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-price-value strong {
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.price-amount {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: tomato;
+}
+
+/* Адаптивность для страницы "Собрать ланч" */
+
+/* ≤800px */
+@media (max-width: 800px) {
+    .menu-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    nav {
+        justify-content: space-between;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    .dish-card {
+        padding: 20px 25px;
+    }
+
+    .variants-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .order-panel-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ≤600px */
+@media (max-width: 600px) {
+    .menu-container {
+        grid-template-columns: 1fr;
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav a {
+        font-size: calc(1.1rem + 4px);
+    }
+    
+    h2 {
+        text-align: center;
+    }
+    
+    .dish-card {
+        padding: 15px 20px;
+    }
+
+    .variants-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .variant-card {
+        min-height: 100px;
+        padding: 20px 15px;
+    }
+    
+    .variant-dishes {
+        gap: 10px;
+    }
+    
+    .variant-dish img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .variant-dish span {
+        font-size: 0.7rem;
+    }
+    
+    .dessert-info {
+        font-size: 0.7rem;
+    }
+
+    .filters {
+        justify-content: center;
+    }
+
+    .filter-btn {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+    }
+}
+
+/* Адаптивность для блока вариантов */
+@media (max-width: 900px) {
+    .variants-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .variant-dishes {
+        gap: 15px;
+    }
+}
